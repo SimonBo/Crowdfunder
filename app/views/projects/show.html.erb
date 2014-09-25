@@ -17,7 +17,7 @@
 
 <p>
   <strong>Still need :</strong>
-  <p class="need_money">  
+  <p id="needmoney">  
     <%= @need_money %>
   </p>
 </p>
@@ -25,7 +25,7 @@
 <p>
   <strong>Rewards</strong>
   <% @project.rewards.each do |reward| %>
-    <p><%= link_to reward.description, choose_reward_project_path(reward: reward) %></p>
+    <p><%= link_to reward.description, choose_reward_project_path(reward: reward), remote: true %></p>
     <p><%= reward.amount %></p>
   <% end %>
 </p>

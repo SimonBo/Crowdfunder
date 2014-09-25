@@ -1,0 +1,6 @@
+var amount = $('#needmoney'),
+	total = Number(amount.html());
+
+var new_amount = total - <%= @reward.amount %>;
+	
+	amount.html(new_amount);

@@ -8,10 +8,10 @@ class ProjectsController < ApplicationController
     current_user.donations << Donation.create(amount: @reward.amount, project_id: @project.id)
     current_user.rewards << @reward
 
-
-    redirect_to :root, notice: "You have chosen project and reward"
-    
-    
+    respond_to do |format|
+      format.html {    redirect_to :root, notice: "You have chosen project and reward" }
+      format.js 
+    end
   end
 
   def index
